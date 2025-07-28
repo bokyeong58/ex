@@ -62,6 +62,7 @@ section .profileImg {
   height: 340px;
   border-radius: 50%;
   overflow: hidden;
+  margin: 0 auto;
 }
 section > p:first-of-type {
   color: #000;
