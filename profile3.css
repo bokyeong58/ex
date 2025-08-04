@@ -3,6 +3,57 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css');
 /* 프리텐다드 폰트 */
 
+/* 카드 전환 라디오 버튼 박스 */
+.card-switcher {
+  diplay: flex;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.card-switcher label {
+  cursor: pointer;
+  padding: 8px 20px;
+  background-color: #444; /* 어두운 배경 */
+  color: white;           /* 흰색 숫자 */
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.card-switcher label:hover {
+  background-color: #222;
+}
+
+input[type="radio"][name="card"] {
+  display: none;
+}
+
+#card1:checked + label,
+#card2:checked + label {
+  background-color: black;
+}
+
+/* 카드 wrapper 내부에서 기본적으로 모두 숨김 */
+.card1,
+.card2 {
+  display: none;
+}
+
+/* 카드1이 선택되었을 때 보여줌 */
+#card1:checked ~ main .card-wrapper .card1 {
+  display: block;
+}
+
+/* 카드2가 선택되었을 때 보여줌 */
+#card2:checked ~ main .card-wrapper .card2 {
+  display: block;
+}
+
 .whole-box {
   width: 1060px;
   height: 600px;
@@ -62,8 +113,14 @@
 #slide2:checked ~ .slides .slide:nth-child(2),
 #slide3:checked ~ .slides .slide:nth-child(3),
 #slide4:checked ~ .slides .slide:nth-child(4),
-#slide5:checked ~ .slides .slide:nth-child(5) {
+#slide5:checked ~ .slides .slide:nth-child(5),
+#slide6:checked ~ .slides .slide:nth-child(1),
+#slide7:checked ~ .slides .slide:nth-child(2),
+#slide8:checked ~ .slides .slide:nth-child(3),
+#slide9:checked ~ .slides .slide:nth-child(4),
+#slide10:checked ~ .slides .slide:nth-child(5) {
   display: flex;
+  opacity: 1;
 }
 
 /* 네비게이션 버튼 */
