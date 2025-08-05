@@ -36,9 +36,33 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Please write what you want to say to me"required></textarea>
                 </span>
-                <button type="button">Submit</button>
+                <button type="button" id="sendEmail">Submit</button>
             </form>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+    const form = document.querySelector('form');
+    const submitButton = document.querySelector('#sendEmail');
+
+    const sendEmail = (e) => {
+
+      emailjs
+        .sendForm('service_aety2k9', 'template_gbt6oae', form, {
+          publicKey: '2So_s_Zb_fjD78n9M',
+        })
+        .then(
+          () => {
+            alert(`${form.name.value}님, 메일 전송에 성공했습니다 :)`);
+          },
+          (error) => {
+            alert(`${form.name.value}님, 메일 전송에 실패했습니다 :(`);
+          },
+        );
+    };
+
+    // 버튼 클릭 시 sendEmail 함수 호출
+    submitButton.addEventListener('click', sendEmail);
+  </script>
 </body>
 </html>
