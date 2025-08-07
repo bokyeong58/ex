@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍔 Burger Shop 🍔</title>
+</head>
+<body>
+    <h1🍔 Burger Shop 🍔</h1>
+    <div id="menu">
+        <button data-name="치듀폭탄버거🍔" data-price="5000">
+            <img src="/ex/images/buger.jpg" alt="치듀폭탄버거🍔" />
+            치듀폭탄 버거🍔<br>5,000원
+        </button>
+        <button data-name="바삭한~감튀🍟" data-price="2000">
+            <img src="/ex/images/fries.png" alt="바삭한~감튀🍟" />
+            바삭한~감튀🍟<br>2,000원
+        </button>
+        <button data-name="앗차거!콜라🥤" data-price="1500">
+            <img src="/ex/images/coke.jpg" alt="앗차거!콜라🥤" />
+            앗차거!콜라🥤<br>1,500원
+        </button>
+    </div>
+    <h2>🛒 장바구니</h2>
+    <div id="cart"></div>
+    <p>총 합계: <span id="total">0</span>원</p>
+    <button id="clearCart">🗑️ 전체 비우기</button>
+    <button id="checkout">✅ 결제하기</button>
+ <div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <p>🍔 주문이 완료되었습니다! 감사합니다.</p>
+    <button id="closeModal">닫기</button>
+
+  </div>
+ </div>
+ <script src="/ex/kiosk.js"></script>
+</body>
+</html>
